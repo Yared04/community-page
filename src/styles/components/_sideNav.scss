@@ -1,0 +1,37 @@
+@use "../variables" as *;
+
+.side-nav {
+  .nav-item {
+    font-weight: 500;
+    transition: background-color 0.3s;
+    border-radius: $border-radius;
+  }
+
+  body[data-theme="light"] & {
+    .Mui-selected {
+      background-color: var(--nav-bg-light);
+    }
+  }
+  body[data-theme="dark"] & {
+    .Mui-selected {
+      background-color: var(--nav-bg-dark);
+    }
+  }
+}
+.app-bar.MuiPaper-root {
+  box-shadow: none !important;
+
+  body[data-theme="light"] & {
+    background-color: $background-light;
+    color: $text-dark;
+  }
+  body[data-theme="dark"] & {
+    background-color: $background-dark;
+    color: $text-light;
+  }
+}
+
+.app-bar-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+}

@@ -36,8 +36,15 @@ const PostForm: React.FC = () => {
         multiline
         rows={4}
       />
-      <Button type="submit" variant="contained" color="primary">
-        Submit Post
+      <Button
+        disableElevation
+        disableRipple
+        sx={{ textTransform: "none", float: "right" }}
+        type="submit"
+        variant="contained"
+        color="primary"
+      >
+        Submit
       </Button>
     </form>
   );

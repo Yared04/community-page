@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { getPosts, Post } from "../api/postsApi";
 import PostList from "./PostsList";
-import PostForm from "./PostForm";
-import { Container, Typography, Button } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import "../styles/_global.scss";
 
-const Home: React.FC = () => {
+interface HomeProps {
+  search: string;
+}
+
+const Home: React.FC<HomeProps> = ({ search }) => {
   const [posts, setPosts] = useState<Post[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
-  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -26,20 +27,20 @@ const Home: React.FC = () => {
     fetchPosts();
   }, []);
 
+  const filteredPosts = posts.filter(
+    (post) =>
+      post.title.toLowerCase().includes(search.toLowerCase()) ||
+      post.content.toLowerCase().includes(search.toLowerCase())
+  );
+
   if (loading) {
     return <p>Loading posts...</p>;
   }
 
   return (
-    <Container>
-      <Typography variant="h1" gutterBottom>
-        Community Page
-      </Typography>
-      <Button onClick={() => navigate("/create")} variant="outlined">
-        Create Post
-      </Button>
-      <PostList posts={posts} />
-    </Container>
+    <div className="home">
+      <PostList posts={filteredPosts} />
+    </div>
   );
 };
 

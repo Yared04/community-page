@@ -1,0 +1,24 @@
+@use "../variables" as *;
+.post-card {
+  cursor: pointer;
+}
+
+.post-card .MuiCardContent-root {
+  padding-bottom: 1rem !important;
+}
+
+body[data-theme="light"] .post-card {
+  background-color: $background-light;
+}
+
+body[data-theme="dark"] .post-card {
+  background-color: $background-dark;
+}
+
+.post-card-footer {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 0.2rem;
+  align-items: center;
+  justify-content: space-between;
+}
