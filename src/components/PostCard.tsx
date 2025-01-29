@@ -32,7 +32,7 @@ const PostCard: React.FC<PostCardProps> = ({
 
   return (
     <Card
-      elevation={0}
+      elevation={1}
       onClick={() => navigate(`/post/${postId}`)}
       className="post-card"
     >
@@ -54,8 +54,8 @@ const PostCard: React.FC<PostCardProps> = ({
           {body}
         </Typography>
         <div className="post-card-footer">
-          <span className="sub-text">{timeAgoText}</span>
-          <span className="sub-text">{threads} Threads</span>
+          <span>{timeAgoText}</span>
+          <span>{threads} Threads</span>
         </div>
       </CardContent>
     </Card>

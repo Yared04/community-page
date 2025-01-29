@@ -1,50 +1,79 @@
-# React + TypeScript + Vite
+# Community Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a simple React application built with TypeScript and Vite. It is styled using SCSS and Material UI.
 
-Currently, two official plugins are available:
+## Getting Started
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Prerequisites
 
-## Expanding the ESLint configuration
+Make sure you have the following installed on your machine:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Node.js (v14 or higher)
+- npm (v6 or higher)
 
-- Configure the top-level `parserOptions` property like this:
+### Installation
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+1. Clone the repository:
+
+```sh
+git clone https://github.com/your-username/community-page.git
+cd community-page
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+2. Install the dependencies:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```sh
+npm install
 ```
+
+### Running the Application
+
+To start the development server, run:
+
+```sh
+npm run dev
+```
+
+This will start the Vite development server and you can view the application in your browser at `http://localhost:3000`.
+
+### Building the Application
+
+To build the application for production, run:
+
+```sh
+npm run build
+```
+
+The built files will be output to the `dist` directory.
+
+### Previewing the Production Build
+
+To preview the production build, run:
+
+```sh
+npm run preview
+```
+
+This will start a local server to serve the built files.
+
+## Project Structure
+
+- `src/components`: Contains the React components.
+- `src/styles`: Contains the SCSS stylesheets.
+- `src/data`: Contains the mock data used for the application.
+- `src/utils`: Contains utility functions used through out the application.
+- `src/api`: Contains functions that simulate api calls and fetch data from the mock data found in src/data.
+- `public`: Contains static assets like images.
+
+## Dependencies
+
+- React
+- TypeScript
+- Vite
+- SCSS
+
+## Development Tools
+
+- ESLint: For linting the code.
+- TypeScript: For static type checking.
+- Vite: For fast development and build.

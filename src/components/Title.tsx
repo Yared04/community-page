@@ -20,7 +20,9 @@ const Title: React.FC<TitleProps> = ({ title }) => {
         onClick={handleBackClick}
         style={{ cursor: "pointer", marginRight: "10px" }}
       />
-      <Typography variant="h4">{title}</Typography>
+      <Typography variant="h5" className="title">
+        {title}
+      </Typography>
     </div>
   );
 };

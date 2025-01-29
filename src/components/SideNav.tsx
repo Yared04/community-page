@@ -90,7 +90,8 @@ const SideNav: React.FC<DrawerProps> = ({
         }}
       />
     ),
-    default: <Title />,
+    "/forums": <Title title="Forums" />,
+    default: <Title title="Post Detail" />,
   };
 
   const drawer = (
